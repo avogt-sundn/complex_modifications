@@ -1,0 +1,51 @@
+{
+    "title": "ANSI Plus",
+    "rules": [
+        {
+            "description": "ANSI Plus",
+            "manipulators": [
+                // CMD +
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "equal_sign",
+                        "modifiers": {
+                            "mandatory": [
+                                "shift",
+                                "command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "close_bracket",
+                            "modifiers": [
+                                "command"
+                            ]
+                        }
+                    ]
+                },
+                // CMD + -
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "hyphen",
+                        "modifiers": {
+                            "mandatory": [
+                                "command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "slash",
+                            "modifiers": [
+                                "command"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
