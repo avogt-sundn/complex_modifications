@@ -1,71 +1,75 @@
 {
-    "title": "ANSI Semikolon und Komma",
+    "title": "ANSI Klammern eckig geschweift",
     "rules": [
         {
-            "description": "ANSI Semikolon und Komma",
+            "description": "ANSI Klammern eckig geschweift",
             "manipulators": [
-                // Semicolon ; = Shift + comma
+                // [
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "semicolon"
+                        "key_code": "open_bracket"
                     },
                     "to": [
                         {
-                            "key_code": "comma",
+                            "key_code": "5",
                             "modifiers": [
-                                "left_shift"
+                                "left_option"
                             ]
                         }
                     ]
                 },
-                // doppelpunkt
+                // ]
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "semicolon",
+                        "key_code": "close_bracket"
+                    },
+                    "to": [
+                        {
+                            "key_code": "6",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ]
+                },
+                // {
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "open_bracket",
                         "modifiers": {
                             "mandatory": [
-                                "shift"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "period",
-                            "modifiers": [
                                 "left_shift"
                             ]
                         }
-                    ]
-                },
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "quote"
                     },
                     "to": [
                         {
-                            "key_code": "comma"
+                            "key_code": "8",
+                            "modifiers": [
+                                "left_option"
+                            ]
                         }
                     ]
                 },
-                // anfuehrungszeichen
+                // ]
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "quote",
+                        "key_code": "close_bracket",
                         "modifiers": {
                             "mandatory": [
-                                "shift"
+                                "left_shift"
                             ]
                         }
                     },
                     "to": [
                         {
-                            "key_code": "2",
+                            "key_code": "9",
                             "modifiers": [
-                                "left_shift"
+                                "left_option"
                             ]
                         }
                     ]

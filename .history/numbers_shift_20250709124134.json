@@ -1,0 +1,30 @@
+{
+    "title": "ANSI Numbers Shift",
+    "rules": [
+        {
+            "description": "ANSI Numbers Shift",
+            "manipulators": [
+                // pipe
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "0",
+                        "modifiers": {
+                            "mandatory": [
+                                "shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "9",
+                            "modifiers": [
+                                "shift"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

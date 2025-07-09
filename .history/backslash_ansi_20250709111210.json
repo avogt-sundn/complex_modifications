@@ -1,40 +1,41 @@
 {
-    "title": "ANSI Gleich",
+    "title": "ANSI Backslash",
     "rules": [
         {
-            "description": "ANSI Gleich",
+            "description": "ANSI Backslash",
             "manipulators": [
-                // =
+                // pipe
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "equal_sign"
+                        "key_code": "backslash",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_shift"
+                            ]
+                        }
                     },
                     "to": [
                         {
-                            "key_code": "0",
+                            "key_code": "7",
                             "modifiers": [
-                                "left_shift"
+                                "left_option"
                             ]
                         }
                     ]
                 },
-                // +
+                // ]
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "equal_sign",
-                        "modifiers": {
-                            "mandatory": [
-                                "shift"
-                            ]
-                        }
+                        "key_code": "backslash"
                     },
                     "to": [
                         {
-                            "key_code": "close_bracket",
+                            "key_code": "7",
                             "modifiers": [
-                                "left_control"
+                                "left_option",
+                                "left_shift"
                             ]
                         }
                     ]

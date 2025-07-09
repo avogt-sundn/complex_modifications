@@ -1,29 +1,14 @@
 {
-    "title": "ANSI Semikolon und Komma",
+    "title": "ANSI Numbers Shift",
     "rules": [
         {
-            "description": "ANSI Semikolon und Komma",
+            "description": "ANSI Numbers Shift",
             "manipulators": [
-                // Semicolon ; = Shift + comma
+                // 0 shift -> )
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "semicolon"
-                    },
-                    "to": [
-                        {
-                            "key_code": "comma",
-                            "modifiers": [
-                                "left_shift"
-                            ]
-                        }
-                    ]
-                },
-                // doppelpunkt
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "semicolon",
+                        "key_code": "0",
                         "modifiers": {
                             "mandatory": [
                                 "shift"
@@ -32,29 +17,18 @@
                     },
                     "to": [
                         {
-                            "key_code": "period",
+                            "key_code": "9",
                             "modifiers": [
-                                "left_shift"
+                                "shift"
                             ]
                         }
                     ]
                 },
+                // 9 shift -> (
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "quote"
-                    },
-                    "to": [
-                        {
-                            "key_code": "comma"
-                        }
-                    ]
-                },
-                // anfuehrungszeichen
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "quote",
+                        "key_code": "9",
                         "modifiers": {
                             "mandatory": [
                                 "shift"
@@ -63,9 +37,29 @@
                     },
                     "to": [
                         {
-                            "key_code": "2",
+                            "key_code": "8",
                             "modifiers": [
-                                "left_shift"
+                                "shift"
+                            ]
+                        }
+                    ]
+                },
+                // 8 shift -> *
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "8",
+                        "modifiers": {
+                            "mandatory": [
+                                "shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "close_bracket",
+                            "modifiers": [
+                                "shift"
                             ]
                         }
                     ]

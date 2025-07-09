@@ -23,7 +23,7 @@
                         "key_code": "hyphen",
                         "modifiers": {
                             "mandatory": [
-                                "left_shift"
+                                "shift"
                             ]
                         }
                     },
