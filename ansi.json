@@ -606,6 +606,27 @@
                             ]
                         }
                     ]
+                },
+                // CMD + /
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "slash",
+                        "modifiers": {
+                            "mandatory": [
+                                "command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "7",
+                            "modifiers": [
+                                "shift",
+                                "command"
+                            ]
+                        }
+                    ]
                 }
             ]
         }
