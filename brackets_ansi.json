@@ -1,0 +1,80 @@
+{
+    "title": "ANSI Klammern eckig geschweift",
+    "rules": [
+        {
+            "description": "ANSI Klammern eckig geschweift",
+            "manipulators": [
+                // [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "open_bracket"
+                    },
+                    "to": [
+                        {
+                            "key_code": "5",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ]
+                },
+                // ]
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "close_bracket"
+                    },
+                    "to": [
+                        {
+                            "key_code": "6",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ]
+                },
+                // {
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "open_bracket",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "8",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ]
+                },
+                // ]
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "close_bracket",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "9",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
