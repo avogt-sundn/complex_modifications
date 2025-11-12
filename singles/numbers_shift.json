@@ -118,10 +118,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "backslash",
-                            "modifiers": [
-                                "control"
-                            ]
+                            "key_code": "backslash"
                         }
                     ]
                 },
