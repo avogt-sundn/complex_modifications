@@ -2,7 +2,7 @@
     "title": "ANSI-US MacOS Deutsch",
     "rules": [
         {
-            "description": "ANSI-US MacOS Deutsch",
+            "description": "ANSI-US MacOS Deutsch v1",
             "manipulators": [
                 {
                     "type": "basic",
@@ -158,10 +158,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "close_bracket",
-                            "modifiers": [
-                                "left_control"
-                            ]
+                            "key_code": "close_bracket"
                         }
                     ]
                 },

@@ -32,10 +32,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "close_bracket",
-                            "modifiers": [
-                                "left_control"
-                            ]
+                            "key_code": "close_bracket"
                         }
                     ]
                 }
