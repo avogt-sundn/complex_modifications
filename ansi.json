@@ -639,11 +639,11 @@
                         }
                     ]
                 },
-                // CMD s -> umlaut s
+                // CMD 0 -> umlaut s
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "s",
+                        "key_code": "0",
                         "modifiers": {
                             "mandatory": [
                                 "command"
