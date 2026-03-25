@@ -208,6 +208,37 @@
                         }
                     ]
                 },
+                // ' from ANSI key left of Enter -> German Windows apostrophe (Shift+#)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "quote"
+                    },
+                    "to": [
+                        {
+                            "key_code": "backslash",
+                            "modifiers": [
+                                "shift"
+                            ]
+                        }
+                    ]
+                },
                 // @ via ANSI Shift+2 -> AltGr+Q (deutsch Windows)
                 {
                     "type": "basic",
