@@ -138,6 +138,76 @@
                         }
                     ]
                 },
+                // ` from physical ANSI grave key -> German Windows acute/grave dead key + space
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "grave_accent_and_tilde"
+                    },
+                    "to": [
+                        {
+                            "key_code": "equal_sign",
+                            "modifiers": [
+                                "shift"
+                            ]
+                        },
+                        {
+                            "key_code": "spacebar"
+                        }
+                    ]
+                },
+                // ~ from physical ANSI Shift+grave -> German Windows AltGr+] dead key + space
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "grave_accent_and_tilde",
+                        "modifiers": {
+                            "mandatory": [
+                                "shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "close_bracket",
+                            "modifiers": [
+                                "right_option"
+                            ]
+                        }
+                    ]
+                },
                 // @ via ANSI Shift+2 -> AltGr+Q (deutsch Windows)
                 {
                     "type": "basic",
