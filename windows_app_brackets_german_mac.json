@@ -1,8 +1,8 @@
 {
-    "title": "Windows App: Eckige und geschweifte Klammern vom deutschen Mac-Keyboard",
+    "title": "Windows App: vom deutschen Mac-Keyboard",
     "rules": [
         {
-            "description": "Windows App: Option+5/6/8/9 (deutsch Mac) → AltGr+8/9/7/0 (deutsch Windows)",
+            "description": "Windows App: (deutsch Mac) → (deutsch Windows)",
             "manipulators": [
                 // [ = Option+5 (Mac deutsch) → AltGr+8 (Windows deutsch)
                 {
@@ -215,6 +215,42 @@
                     "to": [
                         {
                             "key_code": "hyphen",
+                            "modifiers": [
+                                "right_option"
+                            ]
+                        }
+                    ]
+                },
+                // ~ = Option+N (Mac deutsch) -> AltGr+] dead key + space resolves to literal ~ on German Windows
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": true
+                                }
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "n",
+                        "modifiers": {
+                            "mandatory": [
+                                "option"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "close_bracket",
                             "modifiers": [
                                 "right_option"
                             ]
