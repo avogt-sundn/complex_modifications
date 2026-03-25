@@ -1,117 +1,149 @@
 {
-    "title": "ANSI Angles",
+    "title": "Windows App: Eckige und geschweifte Klammern vom deutschen Mac-Keyboard",
     "rules": [
         {
-            "description": "ANSI Angles",
+            "description": "Windows App: Option+5/6/8/9 (deutsch Mac) → AltGr+8/9/7/0 (deutsch Windows)",
             "manipulators": [
-                // <
+                // [ = Option+5 (Mac deutsch) → AltGr+8 (Windows deutsch)
                 {
                     "type": "basic",
                     "conditions": [
                         {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
                             "type": "device_if",
                             "identifiers": [
                                 {
-                                    "is_built_in_keyboard": false
+                                    "is_built_in_keyboard": true
                                 }
                             ]
                         }
                     ],
                     "from": {
-                        "key_code": "comma",
+                        "key_code": "5",
                         "modifiers": {
                             "mandatory": [
-                                "shift"
+                                "option"
                             ]
                         }
                     },
                     "to": [
                         {
-                            "key_code": "grave_accent_and_tilde"
-                        }
-                    ]
-                },
-                // >
-                {
-                    "type": "basic",
-                    "conditions": [
-                        {
-                            "type": "device_if",
-                            "identifiers": [
-                                {
-                                    "is_built_in_keyboard": false
-                                }
-                            ]
-                        }
-                    ],
-                    "from": {
-                        "key_code": "period",
-                        "modifiers": {
-                            "mandatory": [
-                                "shift"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "grave_accent_and_tilde",
+                            "key_code": "8",
                             "modifiers": [
-                                "shift"
+                                "right_option"
                             ]
                         }
                     ]
                 },
-                // /
+                // ] = Option+6 (Mac deutsch) → AltGr+9 (Windows deutsch)
                 {
                     "type": "basic",
                     "conditions": [
                         {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
                             "type": "device_if",
                             "identifiers": [
                                 {
-                                    "is_built_in_keyboard": false
+                                    "is_built_in_keyboard": true
                                 }
                             ]
                         }
                     ],
                     "from": {
-                        "key_code": "slash"
+                        "key_code": "6",
+                        "modifiers": {
+                            "mandatory": [
+                                "option"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "9",
+                            "modifiers": [
+                                "right_option"
+                            ]
+                        }
+                    ]
+                },
+                // { = Option+8 (Mac deutsch) → AltGr+7 (Windows deutsch)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": true
+                                }
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "8",
+                        "modifiers": {
+                            "mandatory": [
+                                "option"
+                            ]
+                        }
                     },
                     "to": [
                         {
                             "key_code": "7",
                             "modifiers": [
-                                "shift"
+                                "right_option"
                             ]
                         }
                     ]
                 },
-                // ?
+                // } = Option+9 (Mac deutsch) → AltGr+0 (Windows deutsch)
                 {
                     "type": "basic",
                     "conditions": [
                         {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
                             "type": "device_if",
                             "identifiers": [
                                 {
-                                    "is_built_in_keyboard": false
+                                    "is_built_in_keyboard": true
                                 }
                             ]
                         }
                     ],
                     "from": {
-                        "key_code": "slash",
+                        "key_code": "9",
                         "modifiers": {
                             "mandatory": [
-                                "shift"
+                                "option"
                             ]
                         }
                     },
                     "to": [
                         {
-                            "key_code": "hyphen",
+                            "key_code": "0",
                             "modifiers": [
-                                "shift"
+                                "right_option"
                             ]
                         }
                     ]

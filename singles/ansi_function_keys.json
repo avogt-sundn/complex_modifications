@@ -6,6 +6,16 @@
             "manipulators": [
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "consumer_key_code": "display_brightness_increment"
                     },
@@ -17,6 +27,16 @@
                 },
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "consumer_key_code": "display_brightness_decrement"
                     },
@@ -28,6 +48,16 @@
                 },
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "simultaneous": [
                             {
@@ -46,6 +76,16 @@
                 },
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "consumer_key_code": "dictation"
                     },

@@ -7,6 +7,16 @@
                 // [
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "open_bracket"
                     },
@@ -22,6 +32,16 @@
                 // ]
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "close_bracket"
                     },
@@ -37,6 +57,16 @@
                 // {
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "open_bracket",
                         "modifiers": {
@@ -57,6 +87,16 @@
                 // ]
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "close_bracket",
                         "modifiers": {

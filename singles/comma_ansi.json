@@ -7,6 +7,16 @@
                 // Semicolon ; = Shift + comma
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "semicolon"
                     },
@@ -22,6 +32,16 @@
                 // doppelpunkt
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "semicolon",
                         "modifiers": {
@@ -41,6 +61,16 @@
                 },
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "quote"
                     },
@@ -53,6 +83,16 @@
                 // anfuehrungszeichen
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "quote",
                         "modifiers": {

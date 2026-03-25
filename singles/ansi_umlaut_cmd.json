@@ -7,6 +7,16 @@
                 // CMD- -> umlaut s
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "slash",
                         "modifiers": {
@@ -21,14 +31,24 @@
                         }
                     ]
                 },
-                // CMD 0 -> umlaut s
+                // OPT s -> umlaut s
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
-                        "key_code": "0",
+                        "key_code": "s",
                         "modifiers": {
                             "mandatory": [
-                                "command"
+                                "option"
                             ]
                         }
                     },
@@ -41,6 +61,16 @@
                 // CMD[ -> ü
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "open_bracket",
                         "modifiers": {
@@ -58,6 +88,16 @@
                 // shift-CMD =_[ -> Ü
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "open_bracket",
                         "modifiers": {
@@ -79,6 +119,16 @@
                 // CMD; -> ö
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "semicolon",
                         "modifiers": {
@@ -96,6 +146,16 @@
                 // CMD; -> Ö
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "semicolon",
                         "modifiers": {
@@ -117,6 +177,16 @@
                 // CMD; -> ä
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "quote",
                         "modifiers": {
@@ -134,6 +204,16 @@
                 // CMD; -> Ä
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "quote",
                         "modifiers": {

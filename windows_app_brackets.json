@@ -1,13 +1,19 @@
 {
-    "title": "ANSI Angles",
+    "title": "Windows App: Eckige und geschweifte Klammern (Deutsch)",
     "rules": [
         {
-            "description": "ANSI Angles",
+            "description": "Windows App: Klammern für deutsches Windows-Layout (AltGr statt Option)",
             "manipulators": [
-                // <
+                // [ via AltGr+8 (deutsch Windows)
                 {
                     "type": "basic",
                     "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
                         {
                             "type": "device_if",
                             "identifiers": [
@@ -18,53 +24,27 @@
                         }
                     ],
                     "from": {
-                        "key_code": "comma",
-                        "modifiers": {
-                            "mandatory": [
-                                "shift"
-                            ]
-                        }
+                        "key_code": "open_bracket"
                     },
                     "to": [
                         {
-                            "key_code": "grave_accent_and_tilde"
-                        }
-                    ]
-                },
-                // >
-                {
-                    "type": "basic",
-                    "conditions": [
-                        {
-                            "type": "device_if",
-                            "identifiers": [
-                                {
-                                    "is_built_in_keyboard": false
-                                }
-                            ]
-                        }
-                    ],
-                    "from": {
-                        "key_code": "period",
-                        "modifiers": {
-                            "mandatory": [
-                                "shift"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "grave_accent_and_tilde",
+                            "key_code": "8",
                             "modifiers": [
-                                "shift"
+                                "right_option"
                             ]
                         }
                     ]
                 },
-                // /
+                // ] via AltGr+9 (deutsch Windows)
                 {
                     "type": "basic",
                     "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
                         {
                             "type": "device_if",
                             "identifiers": [
@@ -75,21 +55,63 @@
                         }
                     ],
                     "from": {
-                        "key_code": "slash"
+                        "key_code": "close_bracket"
+                    },
+                    "to": [
+                        {
+                            "key_code": "9",
+                            "modifiers": [
+                                "right_option"
+                            ]
+                        }
+                    ]
+                },
+                // { via AltGr+7 (deutsch Windows)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "open_bracket",
+                        "modifiers": {
+                            "mandatory": [
+                                "shift"
+                            ]
+                        }
                     },
                     "to": [
                         {
                             "key_code": "7",
                             "modifiers": [
-                                "shift"
+                                "right_option"
                             ]
                         }
                     ]
                 },
-                // ?
+                // } via AltGr+0 (deutsch Windows)
                 {
                     "type": "basic",
                     "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
                         {
                             "type": "device_if",
                             "identifiers": [
@@ -100,7 +122,7 @@
                         }
                     ],
                     "from": {
-                        "key_code": "slash",
+                        "key_code": "close_bracket",
                         "modifiers": {
                             "mandatory": [
                                 "shift"
@@ -109,9 +131,9 @@
                     },
                     "to": [
                         {
-                            "key_code": "hyphen",
+                            "key_code": "0",
                             "modifiers": [
-                                "shift"
+                                "right_option"
                             ]
                         }
                     ]

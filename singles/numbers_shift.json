@@ -7,6 +7,16 @@
                 // 0 shift -> )
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "0",
                         "modifiers": {
@@ -27,6 +37,16 @@
                 // 9 shift -> (
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "9",
                         "modifiers": {
@@ -47,6 +67,16 @@
                 // 8 shift -> *
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "8",
                         "modifiers": {
@@ -67,6 +97,16 @@
                 // 7 shift -> &
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "7",
                         "modifiers": {
@@ -87,6 +127,16 @@
                 // 6 shift -> ^
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "6",
                         "modifiers": {
@@ -108,6 +158,16 @@
                 // 3 shift -> #
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "3",
                         "modifiers": {
@@ -125,6 +185,16 @@
                 // 2 shift -> @
                 {
                     "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
                     "from": {
                         "key_code": "2",
                         "modifiers": {
