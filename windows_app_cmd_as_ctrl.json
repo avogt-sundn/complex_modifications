@@ -1,0 +1,613 @@
+{
+    "title": "Windows App: CMD als CTRL",
+    "rules": [
+        {
+            "description": "Windows App: Umlaute und CTRL-Shortcuts via CMD (alle Tastaturen)",
+            "manipulators": [
+
+                // ============================================================
+                // Umlaute — stehen vor den CTRL-Shortcuts damit sie Vorrang haben
+                // ============================================================
+
+                // ß: CMD+/
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "slash",
+                        "modifiers": { "mandatory": [ "command" ] }
+                    },
+                    "to": [ { "key_code": "hyphen" } ]
+                },
+
+                // ü / Ü: CMD+[ / CMD+Shift+[
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "open_bracket",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "shift" ] }
+                    },
+                    "to": [ { "key_code": "open_bracket" } ]
+                },
+
+                // ö / Ö: CMD+; / CMD+Shift+;
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "semicolon",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "shift" ] }
+                    },
+                    "to": [ { "key_code": "semicolon" } ]
+                },
+
+                // ä / Ä: CMD+' / CMD+Shift+'
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "quote",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "shift" ] }
+                    },
+                    "to": [ { "key_code": "quote" } ]
+                },
+
+                // ============================================================
+                // CMD → CTRL Shortcuts
+                // optional: [any] gibt alle weiteren Modifier (Shift, Option …)
+                // unverändert an Windows weiter, z.B. CMD+Shift+Z → CTRL+Shift+Z
+                // ============================================================
+
+                // A: Alles auswählen
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "a",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "a", "modifiers": [ "left_control" ] } ]
+                },
+
+                // C: Kopieren
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "c",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "c", "modifiers": [ "left_control" ] } ]
+                },
+
+                // V: Einfügen
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "v",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "v", "modifiers": [ "left_control" ] } ]
+                },
+
+                // X: Ausschneiden
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "x",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "x", "modifiers": [ "left_control" ] } ]
+                },
+
+                // Z: Rückgängig; CMD+Shift+Z: Wiederholen
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "z",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "z", "modifiers": [ "left_control" ] } ]
+                },
+
+                // Y: Wiederholen
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "y",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "y", "modifiers": [ "left_control" ] } ]
+                },
+
+                // S: Speichern; CMD+Shift+S: Speichern unter
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "s",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "s", "modifiers": [ "left_control" ] } ]
+                },
+
+                // F: Suchen
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "f",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "f", "modifiers": [ "left_control" ] } ]
+                },
+
+                // H: Ersetzen
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "h",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "h", "modifiers": [ "left_control" ] } ]
+                },
+
+                // G: Weitersuchen; CMD+Shift+G: Rückwärts suchen
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "g",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "g", "modifiers": [ "left_control" ] } ]
+                },
+
+                // N: Neu
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "n",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "n", "modifiers": [ "left_control" ] } ]
+                },
+
+                // O: Öffnen
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "o",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "o", "modifiers": [ "left_control" ] } ]
+                },
+
+                // W: Tab/Fenster schließen
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "w",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "w", "modifiers": [ "left_control" ] } ]
+                },
+
+                // T: Neuer Tab; CMD+Shift+T: Tab wiederherstellen
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "t",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "t", "modifiers": [ "left_control" ] } ]
+                },
+
+                // R: Neu laden / Aktualisieren
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "r",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "r", "modifiers": [ "left_control" ] } ]
+                },
+
+                // L: Adressleiste / Gehe zu Zeile
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "l",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "l", "modifiers": [ "left_control" ] } ]
+                },
+
+                // D: Lesezeichen / Zeile duplizieren
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "d",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "d", "modifiers": [ "left_control" ] } ]
+                },
+
+                // B: Fett
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "b",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "b", "modifiers": [ "left_control" ] } ]
+                },
+
+                // I: Kursiv
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "i",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "i", "modifiers": [ "left_control" ] } ]
+                },
+
+                // U: Unterstrichen
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "u",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "u", "modifiers": [ "left_control" ] } ]
+                },
+
+                // K: Link einfügen
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "k",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "k", "modifiers": [ "left_control" ] } ]
+                },
+
+                // P: Drucken
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "p",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "p", "modifiers": [ "left_control" ] } ]
+                },
+
+                // J: Downloads / Springe zu
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "j",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "j", "modifiers": [ "left_control" ] } ]
+                },
+
+                // E: Suche / Zentrieren
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "e",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "e", "modifiers": [ "left_control" ] } ]
+                },
+
+                // = / Shift+=: Zoom vergrößern (CTRL+= bzw. CTRL++)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "equal_sign",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "equal_sign", "modifiers": [ "left_control" ] } ]
+                },
+
+                // -: Zoom verkleinern (CTRL+-)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "hyphen",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "hyphen", "modifiers": [ "left_control" ] } ]
+                },
+
+                // 0: Zoom zurücksetzen (CTRL+0)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "0",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "0", "modifiers": [ "left_control" ] } ]
+                },
+
+                // Left Arrow: wortweise nach links (CTRL+Left)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "left_arrow",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "left_arrow", "modifiers": [ "left_control" ] } ]
+                },
+
+                // Right Arrow: wortweise nach rechts (CTRL+Right)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "right_arrow",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "right_arrow", "modifiers": [ "left_control" ] } ]
+                },
+
+                // Up Arrow: CTRL+Up
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "up_arrow",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "up_arrow", "modifiers": [ "left_control" ] } ]
+                },
+
+                // Down Arrow: CTRL+Down
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "down_arrow",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "down_arrow", "modifiers": [ "left_control" ] } ]
+                },
+
+                // Backspace: Wort rückwärts löschen (CTRL+Backspace)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "delete_or_backspace",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "delete_or_backspace", "modifiers": [ "left_control" ] } ]
+                },
+
+                // Delete (Entf): Wort vorwärts löschen (CTRL+Delete)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "delete_forward",
+                        "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
+                    },
+                    "to": [ { "key_code": "delete_forward", "modifiers": [ "left_control" ] } ]
+                }
+
+            ]
+        }
+    ]
+}
