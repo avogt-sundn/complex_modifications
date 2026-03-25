@@ -1,8 +1,8 @@
 {
-    "title": "Windows App: Eckige und geschweifte Klammern (Deutsch)",
+    "title": "Windows App: vom externen ANSI-Keyboard",
     "rules": [
         {
-            "description": "Windows App: Klammern für deutsches Windows-Layout (AltGr statt Option)",
+            "description": "Windows App: (ansi extern) → (deutsch Windows)",
             "manipulators": [
                 // [ via AltGr+8 (deutsch Windows)
                 {
@@ -132,6 +132,78 @@
                     "to": [
                         {
                             "key_code": "0",
+                            "modifiers": [
+                                "right_option"
+                            ]
+                        }
+                    ]
+                },
+                // @ via ANSI Shift+2 -> AltGr+Q (deutsch Windows)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "2",
+                        "modifiers": {
+                            "mandatory": [
+                                "shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "q",
+                            "modifiers": [
+                                "right_option"
+                            ]
+                        }
+                    ]
+                },
+                // @ via Option+L -> AltGr+Q (deutsch Windows)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "l",
+                        "modifiers": {
+                            "mandatory": [
+                                "option"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "q",
                             "modifiers": [
                                 "right_option"
                             ]
