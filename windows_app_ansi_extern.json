@@ -1,13 +1,19 @@
 {
-    "title": "ANSI Umlaute per CMD",
+    "title": "Windows App: vom externen ANSI-Keyboard",
     "rules": [
         {
-            "description": "ANSI Umlaute per CMD",
+            "description": "Windows App: (ansi extern) → (deutsch Windows)",
             "manipulators": [
-                // CMD- -> umlaut s
+                // [ via AltGr+8 (deutsch Windows)
                 {
                     "type": "basic",
                     "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
                         {
                             "type": "device_if",
                             "identifiers": [
@@ -18,23 +24,94 @@
                         }
                     ],
                     "from": {
-                        "key_code": "slash",
+                        "key_code": "open_bracket"
+                    },
+                    "to": [
+                        {
+                            "key_code": "8",
+                            "modifiers": [
+                                "right_option"
+                            ]
+                        }
+                    ]
+                },
+                // ] via AltGr+9 (deutsch Windows)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "close_bracket"
+                    },
+                    "to": [
+                        {
+                            "key_code": "9",
+                            "modifiers": [
+                                "right_option"
+                            ]
+                        }
+                    ]
+                },
+                // { via AltGr+7 (deutsch Windows)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "open_bracket",
                         "modifiers": {
-                            "mandatory": [ 
-                                "left_command"
+                            "mandatory": [
+                                "shift"
                             ]
                         }
                     },
                     "to": [
                         {
-                            "key_code": "hyphen"
+                            "key_code": "7",
+                            "modifiers": [
+                                "right_option"
+                            ]
                         }
                     ]
                 },
-                // OPT s -> umlaut s
+                // } via AltGr+0 (deutsch Windows)
                 {
                     "type": "basic",
                     "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
                         {
                             "type": "device_if",
                             "identifiers": [
@@ -45,7 +122,180 @@
                         }
                     ],
                     "from": {
-                        "key_code": "s",
+                        "key_code": "close_bracket",
+                        "modifiers": {
+                            "mandatory": [
+                                "shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "0",
+                            "modifiers": [
+                                "right_option"
+                            ]
+                        }
+                    ]
+                },
+                // ` from physical ANSI grave key -> German Windows acute/grave dead key + space
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "grave_accent_and_tilde"
+                    },
+                    "to": [
+                        {
+                            "key_code": "equal_sign",
+                            "modifiers": [
+                                "shift"
+                            ]
+                        },
+                        {
+                            "key_code": "spacebar"
+                        }
+                    ]
+                },
+                // ~ from physical ANSI Shift+grave -> German Windows AltGr+] dead key + space
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "grave_accent_and_tilde",
+                        "modifiers": {
+                            "mandatory": [
+                                "shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "close_bracket",
+                            "modifiers": [
+                                "right_option"
+                            ]
+                        }
+                    ]
+                },
+                // ' from ANSI key left of Enter -> German Windows apostrophe (Shift+#)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "quote"
+                    },
+                    "to": [
+                        {
+                            "key_code": "backslash",
+                            "modifiers": [
+                                "shift"
+                            ]
+                        }
+                    ]
+                },
+                // @ via ANSI Shift+2 -> AltGr+Q (deutsch Windows)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "2",
+                        "modifiers": {
+                            "mandatory": [
+                                "shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "q",
+                            "modifiers": [
+                                "right_option"
+                            ]
+                        }
+                    ]
+                },
+                // @ via Option+L -> AltGr+Q (deutsch Windows)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": false
+                                }
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "l",
                         "modifiers": {
                             "mandatory": [
                                 "option"
@@ -54,180 +304,9 @@
                     },
                     "to": [
                         {
-                            "key_code": "hyphen"
-                        }
-                    ]
-                },
-                // CMD[ -> ü
-                {
-                    "type": "basic",
-                    "conditions": [
-                        {
-                            "type": "device_if",
-                            "identifiers": [
-                                {
-                                    "is_built_in_keyboard": false
-                                }
-                            ]
-                        }
-                    ],
-                    "from": {
-                        "key_code": "open_bracket",
-                        "modifiers": {
-                            "mandatory": [
-                                "command"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "open_bracket"
-                        }
-                    ]
-                },
-                // shift-CMD =_[ -> Ü
-                {
-                    "type": "basic",
-                    "conditions": [
-                        {
-                            "type": "device_if",
-                            "identifiers": [
-                                {
-                                    "is_built_in_keyboard": false
-                                }
-                            ]
-                        }
-                    ],
-                    "from": {
-                        "key_code": "open_bracket",
-                        "modifiers": {
-                            "mandatory": [
-                                "command",
-                                "shift"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "open_bracket",
+                            "key_code": "q",
                             "modifiers": [
-                                "left_shift"
-                            ]
-                        }
-                    ]
-                },
-                // CMD; -> ö
-                {
-                    "type": "basic",
-                    "conditions": [
-                        {
-                            "type": "device_if",
-                            "identifiers": [
-                                {
-                                    "is_built_in_keyboard": false
-                                }
-                            ]
-                        }
-                    ],
-                    "from": {
-                        "key_code": "semicolon",
-                        "modifiers": {
-                            "mandatory": [
-                                "command"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "semicolon"
-                        }
-                    ]
-                },
-                // CMD; -> Ö
-                {
-                    "type": "basic",
-                    "conditions": [
-                        {
-                            "type": "device_if",
-                            "identifiers": [
-                                {
-                                    "is_built_in_keyboard": false
-                                }
-                            ]
-                        }
-                    ],
-                    "from": {
-                        "key_code": "semicolon",
-                        "modifiers": {
-                            "mandatory": [
-                                "command",
-                                "shift"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "semicolon",
-                            "modifiers": [
-                                "left_shift"
-                            ]
-                        }
-                    ]
-                },
-                // CMD; -> ä
-                {
-                    "type": "basic",
-                    "conditions": [
-                        {
-                            "type": "device_if",
-                            "identifiers": [
-                                {
-                                    "is_built_in_keyboard": false
-                                }
-                            ]
-                        }
-                    ],
-                    "from": {
-                        "key_code": "quote",
-                        "modifiers": {
-                            "mandatory": [
-                                "command"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "quote"
-                        }
-                    ]
-                },
-                // CMD; -> Ä
-                {
-                    "type": "basic",
-                    "conditions": [
-                        {
-                            "type": "device_if",
-                            "identifiers": [
-                                {
-                                    "is_built_in_keyboard": false
-                                }
-                            ]
-                        }
-                    ],
-                    "from": {
-                        "key_code": "quote",
-                        "modifiers": {
-                            "mandatory": [
-                                "command",
-                                "shift"
-                            ]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "quote",
-                            "modifiers": [
-                                "left_shift"
+                                "right_option"
                             ]
                         }
                     ]

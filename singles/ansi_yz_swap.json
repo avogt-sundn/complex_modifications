@@ -1,9 +1,10 @@
 {
-    "title": "ANSI function keys",
+    "title": "ANSI Y/Z Swap",
     "rules": [
         {
-            "description": "Sondertasten auf den F-keys mit Fn aktivieren",
+            "description": "ANSI Y/Z Swap",
             "manipulators": [
+                // y → z
                 {
                     "type": "basic",
                     "conditions": [
@@ -17,14 +18,20 @@
                         }
                     ],
                     "from": {
-                        "key_code": "f2"
+                        "key_code": "y",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
-                            "consumer_key_code": "display_brightness_increment"
+                            "key_code": "z"
                         }
                     ]
                 },
+                // z → y
                 {
                     "type": "basic",
                     "conditions": [
@@ -38,11 +45,16 @@
                         }
                     ],
                     "from": {
-                        "key_code": "f1"
+                        "key_code": "z",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
-                            "consumer_key_code": "display_brightness_decrement"
+                            "key_code": "y"
                         }
                     ]
                 }
