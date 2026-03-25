@@ -320,6 +320,73 @@
                             ]
                         }
                     ]
+                },
+                // ^ = German Mac key -> dead key + space resolves to literal ^ on German Windows
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": true
+                                }
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "non_us_backslash"
+                    },
+                    "to": [
+                        {
+                            "key_code": "grave_accent_and_tilde"
+                        },
+                        {
+                            "key_code": "spacebar"
+                        }
+                    ]
+                },
+                // ° = Shift + German Mac key for ^/° -> Shift + German Windows ^/° key
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.rdc\\.macos$"
+                            ]
+                        },
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "is_built_in_keyboard": true
+                                }
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "non_us_backslash",
+                        "modifiers": {
+                            "mandatory": [
+                                "shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "grave_accent_and_tilde",
+                            "modifiers": [
+                                "shift"
+                            ]
+                        }
+                    ]
                 }
             ]
         }
