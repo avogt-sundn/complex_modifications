@@ -1,10 +1,10 @@
 {
-    "title": "ANSI Undo Z",
+    "title": "ANSI Y/Z Swap",
     "rules": [
         {
-            "description": "ANSI Undo Z",
+            "description": "ANSI Y/Z Swap",
             "manipulators": [
-                // CMD Z
+                // y → z
                 {
                     "type": "basic",
                     "conditions": [
@@ -18,23 +18,20 @@
                         }
                     ],
                     "from": {
-                        "key_code": "z",
+                        "key_code": "y",
                         "modifiers": {
-                            "mandatory": [
-                                "command"
+                            "optional": [
+                                "any"
                             ]
                         }
                     },
                     "to": [
                         {
-                            "key_code": "y",
-                            "modifiers": [
-                                "command"
-                            ]
+                            "key_code": "z"
                         }
                     ]
                 },
-                // CMD SHIFT Z
+                // z → y
                 {
                     "type": "basic",
                     "conditions": [
@@ -50,19 +47,14 @@
                     "from": {
                         "key_code": "z",
                         "modifiers": {
-                            "mandatory": [
-                                "command",
-                                "shift"
+                            "optional": [
+                                "any"
                             ]
                         }
                     },
                     "to": [
                         {
-                            "key_code": "y",
-                            "modifiers": [
-                                "command",
-                                "shift"
-                            ]
+                            "key_code": "y"
                         }
                     ]
                 }

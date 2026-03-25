@@ -750,7 +750,7 @@
             ]
         },
         {
-            "description": "ANSI Undo Z",
+            "description": "ANSI Y/Z Swap",
             "manipulators": [
                 {
                     "type": "basic",
@@ -765,19 +765,16 @@
                         }
                     ],
                     "from": {
-                        "key_code": "z",
+                        "key_code": "y",
                         "modifiers": {
-                            "mandatory": [
-                                "command"
+                            "optional": [
+                                "any"
                             ]
                         }
                     },
                     "to": [
                         {
-                            "key_code": "y",
-                            "modifiers": [
-                                "command"
-                            ]
+                            "key_code": "z"
                         }
                     ]
                 },
@@ -796,19 +793,14 @@
                     "from": {
                         "key_code": "z",
                         "modifiers": {
-                            "mandatory": [
-                                "command",
-                                "shift"
+                            "optional": [
+                                "any"
                             ]
                         }
                     },
                     "to": [
                         {
-                            "key_code": "y",
-                            "modifiers": [
-                                "command",
-                                "shift"
-                            ]
+                            "key_code": "y"
                         }
                     ]
                 }

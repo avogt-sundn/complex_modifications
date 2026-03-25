@@ -20,7 +20,7 @@
                     "from": {
                         "key_code": "slash",
                         "modifiers": {
-                            "mandatory": [
+                            "mandatory": [ 
                                 "left_command"
                             ]
                         }
