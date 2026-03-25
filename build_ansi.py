@@ -78,17 +78,27 @@ def build(input_dir: Path, output_file: Path, default_title: str) -> None:
     if not files:
         raise FileNotFoundError(f"No JSON files found in {input_dir}")
 
-    merged_rules = []
+    merged_manipulators = []
     for path in files:
         data = read_jsonc(path)
         rules = data.get("rules")
         if not isinstance(rules, list):
             raise ValueError(f"Missing or invalid 'rules' in {path}")
-        merged_rules.extend(rules)
+
+        for rule in rules:
+            manipulators = rule.get("manipulators") if isinstance(rule, dict) else None
+            if not isinstance(manipulators, list):
+                raise ValueError(f"Missing or invalid 'manipulators' in a rule from {path}")
+            merged_manipulators.extend(manipulators)
 
     result = {
         "title": get_title(output_file, default_title),
-        "rules": merged_rules,
+        "rules": [
+            {
+                "description": "ANSI merged",
+                "manipulators": merged_manipulators,
+            }
+        ],
     }
 
     output_file.write_text(

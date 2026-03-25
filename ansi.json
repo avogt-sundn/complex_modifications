@@ -2,7 +2,7 @@
     "title": "ANSI-US MacOS Deutsch",
     "rules": [
         {
-            "description": "ANSI Angles",
+            "description": "ANSI merged",
             "manipulators": [
                 {
                     "type": "basic",
@@ -111,12 +111,7 @@
                             ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "description": "ANSI CMDs",
-            "manipulators": [
+                },
                 {
                     "type": "basic",
                     "conditions": [
@@ -146,12 +141,7 @@
                             ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "description": "Sondertasten auf den F-keys mit Fn aktivieren",
-            "manipulators": [
+                },
                 {
                     "type": "basic",
                     "conditions": [
@@ -193,12 +183,7 @@
                             "consumer_key_code": "display_brightness_decrement"
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "description": "ANSI Gleich",
-            "manipulators": [
+                },
                 {
                     "type": "basic",
                     "conditions": [
@@ -248,12 +233,7 @@
                             "key_code": "close_bracket"
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "description": "ANSI function keys aktivieren",
-            "manipulators": [
+                },
                 {
                     "type": "basic",
                     "conditions": [
@@ -344,12 +324,7 @@
                             "key_code": "f5"
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "description": "ANSI Tilde",
-            "manipulators": [
+                },
                 {
                     "type": "basic",
                     "conditions": [
@@ -402,12 +377,7 @@
                             ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "description": "ANSI hyphen",
-            "manipulators": [
+                },
                 {
                     "type": "basic",
                     "conditions": [
@@ -457,12 +427,7 @@
                             ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "description": "ANSI Plus",
-            "manipulators": [
+                },
                 {
                     "type": "basic",
                     "conditions": [
@@ -521,12 +486,7 @@
                             ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "description": "ANSI Umlaute per CMD",
-            "manipulators": [
+                },
                 {
                     "type": "basic",
                     "conditions": [
@@ -746,12 +706,7 @@
                             ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "description": "ANSI Y/Z Swap",
-            "manipulators": [
+                },
                 {
                     "type": "basic",
                     "conditions": [
@@ -803,12 +758,7 @@
                             "key_code": "y"
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "description": "ANSI Backslash",
-            "manipulators": [
+                },
                 {
                     "type": "basic",
                     "conditions": [
@@ -862,12 +812,7 @@
                             ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "description": "ANSI Klammern eckig geschweift",
-            "manipulators": [
+                },
                 {
                     "type": "basic",
                     "conditions": [
@@ -973,12 +918,7 @@
                             ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "description": "ANSI Semikolon und Komma",
-            "manipulators": [
+                },
                 {
                     "type": "basic",
                     "conditions": [
@@ -1081,12 +1021,7 @@
                             ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "description": "ANSI Numbers Shift",
-            "manipulators": [
+                },
                 {
                     "type": "basic",
                     "conditions": [
