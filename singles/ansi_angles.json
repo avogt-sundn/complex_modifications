@@ -15,6 +15,10 @@
                                     "is_built_in_keyboard": false
                                 }
                             ]
+                        },
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
                         }
                     ],
                     "from": {
@@ -42,6 +46,10 @@
                                     "is_built_in_keyboard": false
                                 }
                             ]
+                        },
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
                         }
                     ],
                     "from": {
