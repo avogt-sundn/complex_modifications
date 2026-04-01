@@ -9,6 +9,47 @@
                 // Zeichen — stehen vor den CTRL-Shortcuts damit sie Vorrang haben
                 // ============================================================
 
+                // left/right CMD → CTRL: Windows never sees the Windows key (prevents Start menu)
+                // Must be first so subsequent rules see CTRL, not CMD
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": { "key_code": "left_command" },
+                    "to": [ { "key_code": "left_control" } ]
+                },
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": { "key_code": "right_command" },
+                    "to": [ { "key_code": "right_control" } ]
+                },
+
+                // CTRL+TAB: swallow — CMD was remapped to CTRL above, so this catches CMD+TAB
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "tab",
+                        "modifiers": { "mandatory": [ "control" ], "optional": [ "any" ] }
+                    },
+                    "to": []
+                },
+
                 // @: Shift+2 → AltGr+Q (Windows German Layout)
                 {
                     "type": "basic",
