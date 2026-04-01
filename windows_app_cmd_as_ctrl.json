@@ -6,6 +6,26 @@
             "manipulators": [
 
                 // ============================================================
+                // Zeichen — stehen vor den CTRL-Shortcuts damit sie Vorrang haben
+                // ============================================================
+
+                // @: Shift+2 → AltGr+Q (Windows German Layout)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "2",
+                        "modifiers": { "mandatory": [ "shift" ] }
+                    },
+                    "to": [ { "key_code": "q", "modifiers": [ "right_option" ] } ]
+                },
+
+                // ============================================================
                 // Umlaute — stehen vor den CTRL-Shortcuts damit sie Vorrang haben
                 // ============================================================
 
@@ -153,7 +173,7 @@
                         }
                     ],
                     "from": {
-                        "key_code": "z",
+                        "key_code": "y",
                         "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
                     },
                     "to": [ { "key_code": "z", "modifiers": [ "left_control" ] } ]
@@ -169,7 +189,7 @@
                         }
                     ],
                     "from": {
-                        "key_code": "y",
+                        "key_code": "z",
                         "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
                     },
                     "to": [ { "key_code": "y", "modifiers": [ "left_control" ] } ]
@@ -351,6 +371,22 @@
                     "to": [ { "key_code": "d", "modifiers": [ "left_control" ] } ]
                 },
 
+                // B+Option: CTRL+ALT+B
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "b",
+                        "modifiers": { "mandatory": [ "command", "option" ] }
+                    },
+                    "to": [ { "key_code": "b", "modifiers": [ "left_control", "left_alt" ] } ]
+                },
+
                 // B: Fett
                 {
                     "type": "basic",
@@ -413,6 +449,22 @@
                         "modifiers": { "mandatory": [ "command" ], "optional": [ "any" ] }
                     },
                     "to": [ { "key_code": "k", "modifiers": [ "left_control" ] } ]
+                },
+
+                // P+Shift: VS Code Command Palette (CTRL+Shift+P)
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "p",
+                        "modifiers": { "mandatory": [ "command", "shift" ] }
+                    },
+                    "to": [ { "key_code": "p", "modifiers": [ "left_control", "left_shift" ] } ]
                 },
 
                 // P: Drucken
