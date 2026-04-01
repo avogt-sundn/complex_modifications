@@ -70,7 +70,7 @@
                 // Umlaute — stehen vor den CTRL-Shortcuts damit sie Vorrang haben
                 // ============================================================
 
-                // ß: CMD+/
+                // ß: CTRL+/ (CMD was already remapped to CTRL above)
                 {
                     "type": "basic",
                     "conditions": [
@@ -81,12 +81,12 @@
                     ],
                     "from": {
                         "key_code": "slash",
-                        "modifiers": { "mandatory": [ "command" ] }
+                        "modifiers": { "mandatory": [ "control" ] }
                     },
                     "to": [ { "key_code": "hyphen" } ]
                 },
 
-                // ü / Ü: CMD+[ / CMD+Shift+[
+                // ü: CTRL+[ (CMD was already remapped to CTRL above)
                 {
                     "type": "basic",
                     "conditions": [
@@ -97,12 +97,28 @@
                     ],
                     "from": {
                         "key_code": "open_bracket",
-                        "modifiers": { "mandatory": [ "command" ], "optional": [ "shift" ] }
+                        "modifiers": { "mandatory": [ "control" ] }
                     },
                     "to": [ { "key_code": "open_bracket" } ]
                 },
 
-                // ö / Ö: CMD+; / CMD+Shift+;
+                // Ü: CTRL+Shift+[
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "open_bracket",
+                        "modifiers": { "mandatory": [ "control", "shift" ] }
+                    },
+                    "to": [ { "key_code": "open_bracket", "modifiers": [ "left_shift" ] } ]
+                },
+
+                // ö: CTRL+;
                 {
                     "type": "basic",
                     "conditions": [
@@ -113,12 +129,28 @@
                     ],
                     "from": {
                         "key_code": "semicolon",
-                        "modifiers": { "mandatory": [ "command" ], "optional": [ "shift" ] }
+                        "modifiers": { "mandatory": [ "control" ] }
                     },
                     "to": [ { "key_code": "semicolon" } ]
                 },
 
-                // ä / Ä: CMD+' / CMD+Shift+'
+                // Ö: CTRL+Shift+;
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "semicolon",
+                        "modifiers": { "mandatory": [ "control", "shift" ] }
+                    },
+                    "to": [ { "key_code": "semicolon", "modifiers": [ "left_shift" ] } ]
+                },
+
+                // ä: CTRL+'
                 {
                     "type": "basic",
                     "conditions": [
@@ -129,9 +161,25 @@
                     ],
                     "from": {
                         "key_code": "quote",
-                        "modifiers": { "mandatory": [ "command" ], "optional": [ "shift" ] }
+                        "modifiers": { "mandatory": [ "control" ] }
                     },
                     "to": [ { "key_code": "quote" } ]
+                },
+
+                // Ä: CTRL+Shift+'
+                {
+                    "type": "basic",
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [ "^com\\.microsoft\\.rdc\\.macos$" ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "quote",
+                        "modifiers": { "mandatory": [ "control", "shift" ] }
+                    },
+                    "to": [ { "key_code": "quote", "modifiers": [ "left_shift" ] } ]
                 },
 
                 // ============================================================
